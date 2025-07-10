@@ -19,36 +19,66 @@
         .card {
             background-color: white;
             border-radius: 20px;
-            padding: 2rem;
+            padding: 1.5rem; /* Menos padding para imprimir */
             box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-            border-left: 8px solid;
-            margin-bottom: 2rem;
+            border-left: 6px solid;
+            margin-bottom: 1.5rem;
         }
         .squirrel-icon {
             width: 60px;
             height: 60px;
         }
+
+        /* Estilos para Impresión */
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .no-print {
+                display: none;
+            }
+            .card {
+                box-shadow: none;
+                border: 2px solid #ddd;
+                padding: 1rem;
+            }
+            .container {
+                max-width: 100% !important;
+                padding: 0 !important;
+            }
+            h1, h2, h3, h4, p, strong, span, div {
+                color: #000000 !important;
+            }
+            .bg-amber-50, .bg-rose-50, .bg-teal-50, .bg-sky-50, .bg-amber-200 {
+                background-color: #f9fafb !important; /* Un gris muy claro para diferenciar secciones */
+                border: 1px solid #eee;
+            }
+            .text-rose-500, .text-rose-600, .text-amber-700, .text-teal-600, .text-sky-600, .text-amber-800 {
+                 color: #000000 !important;
+            }
+        }
     </style>
 </head>
-<body class="p-4 sm:p-8">
+<body class="p-4 sm:p-6">
 
-    <div class="container mx-auto max-w-4xl">
+    <div class="container mx-auto max-w-2xl">
 
         <!-- Título Principal -->
-        <header class="text-center mb-10">
-            <h1 class="title-font text-5xl sm:text-6xl text-rose-500">¡Mamá, una Aventura te Espera!</h1>
-            <p class="text-xl text-gray-600 mt-2">Este es nuestro plan secreto para Septiembre</p>
+        <header class="text-center mb-8">
+            <h1 class="title-font text-5xl text-rose-500">¡Mamá, una Aventura te Espera!</h1>
+            <p class="text-lg text-gray-600 mt-2">Este es nuestro plan secreto para Septiembre</p>
         </header>
 
         <!-- Sección de Paola -->
-        <div class="text-center mb-12 flex flex-col items-center bg-amber-50 rounded-2xl p-6">
+        <div class="text-center mb-10 flex flex-col items-center bg-amber-50 rounded-2xl p-4">
             <div class="squirrel-icon mb-3">
                 <!-- Ícono de Ardilla -->
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full"><path d="M16.83 6.17a4 4 0 0 0-5.66 0M20 12v2a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4v-2a4 4 0 0 1 4-4h.34a5.2 5.2 0 0 0.81-.17c.28-.08.55-.19.8-.33a1 1 0 0 1 1.05 1.73c-.2.13-.42.25-.65.35-.41.17-.83.3-1.28.38-.4.09-.8.14-1.2.14H8a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-2c0-1.1-.9-2-2-2h-1.17"></path><path d="M18.5 2.5a2.5 2.5 0 0 1 0 5"></path><path d="M14 2.5a2.5 2.5 0 0 1 0 5"></path></svg>
             </div>
             <h2 class="text-2xl font-bold text-amber-700">Operación del Sureste</h2>
             <p class="text-gray-600">A cargo de tu "ardilla enloquecida" (Pao)</p>
-            <p class="font-semibold text-gray-800 mt-2 bg-amber-200 px-3 py-1 rounded-full">Del 30 de Agosto al 27 de Septiembre en Mérida.</p>
+            <p class="font-semibold text-gray-800 mt-2 bg-amber-200 px-3 py-1 rounded-full text-sm">Del 30 de Agosto al 27 de Septiembre en Mérida.</p>
         </div>
 
         <!-- Contenido Principal -->
@@ -57,16 +87,16 @@
             <!-- Tu Viaje a Houston -->
             <div class="card border-rose-500">
                 <div class="flex items-center mb-4">
-                    <div class="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mr-5">
+                    <div class="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                         <!-- Ícono de Pasaporte Lindo -->
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9 text-rose-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path><path d="M12 22v-2.5a2.5 2.5 0 0 1 2.5-2.5h0A2.5 2.5 0 0 1 17 19.5V22"></path><path d="M12 2v2.5a2.5 2.5 0 0 0 2.5 2.5h0A2.5 2.5 0 0 0 17 4.5V2"></path><path d="M7.5 17a2.5 2.5 0 0 1 0-5h0a2.5 2.5 0 0 1 0 5z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-rose-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
                     </div>
                     <div>
-                        <h3 class="text-3xl font-bold text-rose-600">¡Tu Viaje a Houston!</h3>
+                        <h3 class="text-2xl font-bold text-rose-600">¡Tu Viaje a Houston!</h3>
                         <p class="text-gray-600">Una aventura con tu cuñada Marcela y tu sobrina Itzia.</p>
                     </div>
                 </div>
-                <div class="bg-rose-50 p-4 rounded-lg space-y-3">
+                <div class="bg-rose-50 p-4 rounded-lg space-y-2">
                     <p><strong>Fechas:</strong> 6 al 15 de Septiembre</p>
                     <p><strong>Aerolínea:</strong> Volaris (Clave: <span class="font-mono bg-rose-200 px-2 py-1 rounded">IKJ2PG</span>)</p>
                     <hr class="my-2 border-rose-200">
@@ -78,27 +108,27 @@
             <!-- Misión Colombia -->
             <div class="card border-teal-500">
                 <div class="flex items-center mb-4">
-                     <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mr-5">
+                     <div class="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                         <!-- Ícono de Colombia -->
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9 text-teal-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-teal-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                     </div>
                     <div>
-                        <h3 class="text-3xl font-bold text-teal-600">Misión Colombia</h3>
+                        <h3 class="text-2xl font-bold text-teal-600">Misión Colombia</h3>
                         <p class="text-gray-600">Mientras, Oscar y Margely tendrán su propia aventura.</p>
                     </div>
                 </div>
-                 <div class="bg-teal-50 p-4 rounded-lg space-y-3 mb-6">
+                 <div class="bg-teal-50 p-4 rounded-lg space-y-2 mb-4">
                     <p><strong>Viajeros:</strong> Oscar y Margely</p>
                     <p><strong>Destino:</strong> Colombia 🇨🇴</p>
                     <p><strong>Fechas:</strong> 3 al 17 de Septiembre</p>
                 </div>
-                <h4 class="text-xl font-bold text-amber-800 mb-3">Mis Responsabilidades en Mérida:</h4>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="bg-amber-50 p-4 rounded-lg">
+                <h4 class="text-lg font-bold text-amber-800 mb-2">Mis Responsabilidades en Mérida:</h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div class="bg-amber-50 p-3 rounded-lg">
                         <p class="font-semibold text-amber-900">Gerente de Propiedades 🏠</p>
                         <p class="text-sm text-gray-600">A cargo del negocio "Fusion Home".</p>
                     </div>
-                    <div class="bg-amber-50 p-4 rounded-lg">
+                    <div class="bg-amber-50 p-3 rounded-lg">
                         <p class="font-semibold text-amber-900">Niñera de Gato-Hijos 😻</p>
                         <p class="text-sm text-gray-600">Cuidaré a sus 3 bebés: Negrita, Sra. Alicia y Roman.</p>
                     </div>
@@ -108,32 +138,33 @@
             <!-- Mis Hermanas Peludas -->
             <div class="card border-sky-500">
                 <div class="flex items-center mb-4">
-                    <div class="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mr-5">
+                    <div class="w-12 h-12 bg-sky-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                         <!-- Ícono de Corazón con Patita -->
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9 text-sky-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.64 3.42a2 2 0 0 0-3.28 0L1 12.44a1 1 0 0 0 .74 1.56h18.52a1 1 0 0 0 .74-1.56Z"></path><path d="M12 22V14"></path><path d="M7.5 11.5a4.5 4.5 0 0 1 9 0"></path><path d="M12 11.5a2.5 2.5 0 0 1 5 0"></path><path d="M12 11.5a2.5 2.5 0 0 0-5 0"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-sky-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.64 3.42a2 2 0 0 0-3.28 0L1 12.44a1 1 0 0 0 .74 1.56h18.52a1 1 0 0 0 .74-1.56Z"></path><path d="M12 22V14"></path><path d="M7.5 11.5a4.5 4.5 0 0 1 9 0"></path><path d="M12 11.5a2.5 2.5 0 0 1 5 0"></path><path d="M12 11.5a2.5 2.5 0 0 0-5 0"></path></svg>
                     </div>
                     <div>
-                        <h3 class="text-3xl font-bold text-sky-600">Cuidando a mis Hermanas Peludas</h3>
+                        <h3 class="text-2xl font-bold text-sky-600">Cuidando a mis Hermanas Peludas</h3>
                         <p class="text-gray-700">¡Y por supuesto, tus niñas estarán conmigo, muy consentidas!</p>
                     </div>
                 </div>
                 <div class="flex justify-around bg-sky-50 p-4 rounded-lg">
                     <div class="text-center">
-                        <p class="text-5xl">🐈</p>
-                        <p class="font-semibold text-lg">Viri</p>
+                        <p class="text-4xl">🐈</p>
+                        <p class="font-semibold text-base">Viri</p>
                     </div>
                     <div class="text-center">
-                        <p class="text-5xl">🐈‍⬛</p>
-                        <p class="font-semibold text-lg">Pandy</p>
+                        <p class="text-4xl">🐈‍⬛</p>
+                        <p class="font-semibold text-base">Pandy</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Mensaje Final -->
-        <footer class="text-center mt-8">
+        <footer class="text-center mt-6">
             <p class="title-font text-3xl text-rose-500">¡Disfruta cada momento de tu viaje!</p>
             <p class="text-gray-600">Con todo mi amor, Pao.</p>
+            <p class="text-xs text-gray-400 mt-4 no-print">(Puedes imprimir esta hoja desde el menú de tu navegador: Archivo > Imprimir)</p>
         </footer>
 
     </div>
